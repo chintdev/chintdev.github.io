@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>css3 特性之大屏制作</title>
+      <link href="/2021/12/20/css3%20%E7%89%B9%E6%80%A7%E4%B9%8B%E5%A4%A7%E5%B1%8F%E5%88%B6%E4%BD%9C/"/>
+      <url>/2021/12/20/css3%20%E7%89%B9%E6%80%A7%E4%B9%8B%E5%A4%A7%E5%B1%8F%E5%88%B6%E4%BD%9C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="可视化大屏制作-如何适配不同的分辨率和比例？"><a href="#可视化大屏制作-如何适配不同的分辨率和比例？" class="headerlink" title="可视化大屏制作 如何适配不同的分辨率和比例？"></a>可视化大屏制作 如何适配不同的分辨率和比例？</h1><p>=================  </p><ul><li><p>大屏的需求:  </p><ol><li>需要满足市场上不同比例的大屏(5:4、4:3（较少）、16:10、16:9（新品）)</li><li>需要满足不同分辨率的屏幕 (1080px 2K 4K)<!-- ![例子](3.png) --></li></ol></li><li><p> 问题:如果按照设计稿1920*1080开发 ,就不适用于2k 4K,展示效果不好<br>或者是需要用% 或者 vh vw等比例去写css, 这样的方法不仅笨拙 而且代码量增加了不少,而且计算复杂,存在兼容性问题,字体大小不对等问题</p><!-- ![例子](lz.png) --></li></ul><p><strong>于是我就去看看大厂是怎么做大屏的,结果就发现他们都用了一个比较巧妙的方法,只是用了css3的一个新特性:transform:scale(n);用这个缩放的</strong></p><p>参考百度云的 SugerBi可视化</p><ol><li><p><a href="https://sugar.aipage.com/dashboard/5e81f0ec04f74164a1d0bae94cd386dc">https://sugar.aipage.com/dashboard/5e81f0ec04f74164a1d0bae94cd386dc</a></p><!-- ![RUNOOB 图标](1.png)![代码3](1_1.png) --></li><li><p><a href="https://sugar.aipage.com/dashboard/9f5dd5b3166c2c832e75cd3db65df460?conditions=%7B%22select%22:%225%22,%22multiSelect%22:%5B%221%22,%222%22,%223%22,%224%22,%225%22,%22%22%5D%7D">https://sugar.aipage.com/dashboard/9f5dd5b3166c2c832e75cd3db65df460?conditions=%7B%22select%22%3A%225%22%2C%22multiSelect%22%3A%5B%221%22%2C%222%22%2C%223%22%2C%224%22%2C%225%22%2C%22%22%5D%7D</a></p><!-- ![大屏2](2.png)![代码3](2_2.png) --></li></ol><p>以及阿里的datav可视化</p><ol start="3"><li><a href="https://datav.aliyuncs.com/share/464d4b7dfb15e9af2f8dfaa8447af9dd?spm=5176.15036128.0.0.6b6f1f40Or2k99">https://datav.aliyuncs.com/share/464d4b7dfb15e9af2f8dfaa8447af9dd?spm=5176.15036128.0.0.6b6f1f40Or2k99</a></li></ol><!-- ![大屏3](4.png)![代码3](4_1.png) --><!-- *(再看我们预付费的大屏,用了这样的缩放小技巧)* --><p>具体解决代码—–</p><pre><code>function resize() {    if (document.documentElement &amp;&amp; document.documentElement.clientHeight &amp;&amp; document.documentElement.clientWidth) {        var winHeight = document.documentElement.clientHeight; //浏览器的高度        var winWidth = document.documentElement.clientWidth; //浏览器的宽度        var main = document.getElementById("main")        main.style.transform = "scale(" + winWidth / 1920 + ", " + winHeight / 1080 + ")";    }}window.onresize = function () { //当窗口大小发生变化时，重新自适应    resize();}</code></pre><p>实践一下!<br>最后再了解一下</p><ul><li> css3其他新特性</li></ul><ol><li>新增选择器 p:nth-child（n）{color: rgba（255, 0, 0, 0.75）}</li><li>弹性盒模型 display: flex;</li><li>多列布局 column-count: 5;</li><li>媒体查询 @media （max-width: 480px） {.box: {column-count: 1;}}</li><li>个性化字体 @font-face{font-family:BorderWeb;src:url（BORDERW0.eot）；}</li><li>颜色透明度 color: rgba（255, 0, 0, 0.75）；</li><li>圆角 border-radius: 5px;</li><li>渐变 background:linear-gradient（red, green, blue）；</li><li>阴影 box-shadow:3px 3px 3px rgba（0, 64, 128, 0.3）；</li><li>倒影 box-reflect: below 2px;</li><li>文字装饰 text-stroke-color: red;</li><li>文字溢出 text-overflow:ellipsis;</li><li>背景效果 background-size: 100px 100px;</li><li>边框效果 border-image:url（bt_blue.png） 0 10;</li></ol><p><strong>转换</strong></p><ol><li>旋转 transform: rotate（20deg）；</li><li>倾斜 transform: skew（150deg, -10deg）；</li><li>位移 transform:translate（20px, 20px）；</li><li>缩放 transform: scale（.5）；</li><li>平滑过渡 transition: all .3s ease-in .1s;</li><li>动画 @keyframes anim-1 {50% {border-radius: 50%;}} animation: anim-1 1s;</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> css3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Promise</title>
       <link href="/2021/11/11/Promise/"/>
       <url>/2021/11/11/Promise/</url>
