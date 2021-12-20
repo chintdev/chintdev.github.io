@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-20T01:33:19.614Z</updated>
+  <updated>2021-12-20T02:31:42.179Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>deploy_FrontEnd-web</title>
+    <link href="http://example.com/2021/12/20/deploy-FrontEnd-web/"/>
+    <id>http://example.com/2021/12/20/deploy-FrontEnd-web/</id>
+    <published>2021-12-20T01:40:12.000Z</published>
+    <updated>2021-12-20T02:31:42.179Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;如何部署web项目到jump-server-测试服务堡垒机&quot;&gt;&lt;a href=&quot;#如何部署web项目到jump-server-测试服务堡垒机&quot; class=&quot;headerlink&quot; title=&quot;如何部署web项目到jump server</summary>
+        
+      
+    
+    
+    
+    <category term="Browser" scheme="http://example.com/categories/Browser/"/>
+    
+    
+    <category term="deploy" scheme="http://example.com/tags/deploy/"/>
+    
+    <category term="jumpserver" scheme="http://example.com/tags/jumpserver/"/>
+    
+  </entry>
   
   <entry>
     <title>css3 特性之大屏制作</title>
